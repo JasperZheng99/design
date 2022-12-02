@@ -1,7 +1,7 @@
 package factory
 
 /**
-抽象工厂模式
+工厂方法模式
 */
 import "fmt"
 
@@ -9,7 +9,7 @@ type Fruit interface {
 	Show()
 }
 
-type AbstractFactory interface {
+type Factory interface {
 	CreatFruit() Fruit
 }
 
