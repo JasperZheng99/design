@@ -16,7 +16,7 @@ func TestProxy(t *testing.T) {
 	personalShopper.Buy(good)
 
 	fmt.Println("====================\n使用代购")
-	proxyShopper := &proxy.ProxyShopper{personalShopper}
+	proxyShopper := &proxy.ProxyShopper{Shopper: personalShopper}
 
 	proxyShopper.Buy(good)
 }
