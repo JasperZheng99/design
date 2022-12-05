@@ -4,7 +4,7 @@ import "fmt"
 
 // 外观模式
 
-//电视机
+// TV 电视机
 type TV struct{}
 
 func (t *TV) On() {
@@ -15,7 +15,6 @@ func (t *TV) Off() {
 	fmt.Println("关闭 电视机")
 }
 
-//电视机
 type VoiceBox struct{}
 
 func (v *VoiceBox) On() {
@@ -26,7 +25,7 @@ func (v *VoiceBox) Off() {
 	fmt.Println("关闭 音箱")
 }
 
-//灯光
+// 灯光
 type Light struct{}
 
 func (l *Light) On() {
@@ -37,7 +36,7 @@ func (l *Light) Off() {
 	fmt.Println("关闭 灯光")
 }
 
-//游戏机
+// 游戏机
 type Xbox struct{}
 
 func (x *Xbox) On() {
@@ -48,7 +47,7 @@ func (x *Xbox) Off() {
 	fmt.Println("关闭 游戏机")
 }
 
-//麦克风
+// 麦克风
 type MicroPhone struct{}
 
 func (m *MicroPhone) On() {
@@ -59,7 +58,7 @@ func (m *MicroPhone) Off() {
 	fmt.Println("关闭 麦克风")
 }
 
-//投影仪
+// 投影仪
 type Projector struct{}
 
 func (p *Projector) On() {
@@ -70,7 +69,7 @@ func (p *Projector) Off() {
 	fmt.Println("关闭 投影仪")
 }
 
-//家庭影院(外观)
+// 家庭影院(外观)
 type HomePlayerFacade struct {
 	tv    TV
 	vb    VoiceBox
@@ -80,7 +79,7 @@ type HomePlayerFacade struct {
 	pro   Projector
 }
 
-//KTV模式
+// KTV模式
 func (hp *HomePlayerFacade) DoKTV() {
 	fmt.Println("家庭影院进入KTV模式")
 	hp.tv.On()
@@ -90,7 +89,7 @@ func (hp *HomePlayerFacade) DoKTV() {
 	hp.vb.On()
 }
 
-//游戏模式
+// 游戏模式
 func (hp *HomePlayerFacade) DoGame() {
 	fmt.Println("家庭影院进入Game模式")
 	hp.tv.On()

@@ -12,7 +12,7 @@ func TestProxy(t *testing.T) {
 
 	good := &proxy.Good{Name: "iphone14"}
 
-	personalShopper := new(proxy.PesonalShopper)
+	personalShopper := new(proxy.PersonalShopper)
 	personalShopper.Buy(good)
 
 	fmt.Println("====================\n使用代购")

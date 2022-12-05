@@ -5,15 +5,15 @@ import (
 	"testing"
 )
 
-func TestDecorater(t *testing.T) {
+func TestDecorator(t *testing.T) {
 
 	var soup decorater.Food = new(decorater.Soup)
 	soup.Show()
 
-	soup = decorater.NewSaltDecorater(soup)
+	soup = decorater.NewSaltDecorator(soup)
 	soup.Show()
 
-	soup = decorater.NewWaterDecorater(soup)
+	soup = decorater.NewWaterDecorator(soup)
 	soup.Show()
 
 }

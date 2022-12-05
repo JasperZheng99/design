@@ -41,7 +41,7 @@ func (command *CommandCookSoup) CommandChefToCook() {
 	command.chef.CookSoup()
 }
 
-// 服务员，负责收集用户点餐
+// Waiter 服务员，负责收集用户点餐
 type Waiter struct {
 	commands []Command
 }

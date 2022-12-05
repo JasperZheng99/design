@@ -2,7 +2,7 @@ package template
 
 import "fmt"
 
-// 模板方法
+// Beverage 模板方法
 // 抽象类，制作饮料,包裹一个模板的全部实现步骤
 type Beverage interface {
 	BoilWater() //煮开水
@@ -13,12 +13,12 @@ type Beverage interface {
 	WantAddThings() bool //是否加入酌料Hook
 }
 
-//封装一套流程模板，让具体的制作流程继承且实现
+// 封装一套流程模板，让具体的制作流程继承且实现
 type template struct {
 	b Beverage
 }
 
-//封装的固定模板
+// MakeBeverage 封装的固定模板
 func (t *template) MakeBeverage() {
 	if t == nil {
 		return
@@ -34,40 +34,40 @@ func (t *template) MakeBeverage() {
 	}
 }
 
-//具体的模板子类 制作咖啡
-type MakeCaffee struct {
+// MakeCaffee 具体的模板子类 制作咖啡
+type MakeMakeCoffeeffee struct {
 	template //继承模板
 }
 
-func NewMakeCaffee() *MakeCaffee {
-	makeCaffe := new(MakeCaffee)
+func NewMakeCaffee() *MakeMakeCoffeeffee {
+	makeCaffe := new(MakeMakeCoffeeffee)
 	//b 为Beverage，是MakeCaffee的接口，这里需要给接口赋值，指向具体的子类对象
 	//来触发b全部接口方法的多态特性。
 	makeCaffe.b = makeCaffe
 	return makeCaffe
 }
 
-func (mc *MakeCaffee) BoilWater() {
+func (mc *MakeMakeCoffeeffee) BoilWater() {
 	fmt.Println("将水煮到100摄氏度")
 }
 
-func (mc *MakeCaffee) Brew() {
+func (mc *MakeMakeCoffeeffee) Brew() {
 	fmt.Println("用水冲咖啡豆")
 }
 
-func (mc *MakeCaffee) PourInCup() {
+func (mc *MakeMakeCoffeeffee) PourInCup() {
 	fmt.Println("将充好的咖啡倒入陶瓷杯中")
 }
 
-func (mc *MakeCaffee) AddThings() {
+func (mc *MakeMakeCoffeeffee) AddThings() {
 	fmt.Println("添加牛奶和糖")
 }
 
-func (mc *MakeCaffee) WantAddThings() bool {
+func (mc *MakeMakeCoffeeffee) WantAddThings() bool {
 	return true //启动Hook条件
 }
 
-//具体的模板子类 制作茶
+// MakeTea 具体的模板子类 制作茶
 type MakeTea struct {
 	template //继承模板
 }

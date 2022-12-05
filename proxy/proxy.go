@@ -11,10 +11,10 @@ type Shopper interface {
 	Buy(good *Good)
 }
 
-type PesonalShopper struct {
+type PersonalShopper struct {
 }
 
-func (shoper *PesonalShopper) Buy(good *Good) {
+func (shoper *PersonalShopper) Buy(good *Good) {
 	fmt.Println("购买了" + good.Name)
 }
 

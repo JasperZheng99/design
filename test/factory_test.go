@@ -28,8 +28,8 @@ func TestSimpleFactory(t *testing.T) {
 	football := fac.CreatFactory("football")
 	football.Play()
 
-	baseketball := fac.CreatFactory("baseketball")
-	baseketball.Play()
+	basketball := fac.CreatFactory("basketball")
+	basketball.Play()
 }
 
 // 工厂方法测试
