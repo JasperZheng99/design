@@ -1,27 +1,26 @@
-package test
+package observer
 
 import (
-	"design/observer"
 	"fmt"
 	"testing"
 )
 
 func TestObserver(t *testing.T) {
-	zhangsan := observer.Student{
+	zhangsan := Student{
 		Name:     "张三",
 		DoThings: "打王者",
 	}
-	lihua := observer.Student{
+	lihua := Student{
 		Name:     "李华",
 		DoThings: "刮痧",
 	}
-	daitou := observer.Student{
+	daitou := Student{
 		Name:     "呆头",
 		DoThings: "看漫画",
 	}
 
 	// 班长，通知者
-	monitor := observer.Monitor{}
+	monitor := Monitor{}
 	monitor.AddListener(&zhangsan)
 	monitor.AddListener(&lihua)
 	monitor.AddListener(&daitou)

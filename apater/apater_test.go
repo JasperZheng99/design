@@ -1,7 +1,6 @@
-package test
+package apater
 
 import (
-	"design/apater"
 	"fmt"
 	"testing"
 )
@@ -17,6 +16,6 @@ func (chargeType *AndroidTypeC) UseTypeC() {
 
 func TestApater(t *testing.T) {
 
-	iphone14 := apater.NewIPhone(apater.NewApater(new(AndroidTypeC)))
+	iphone14 := NewIPhone(NewApater(new(AndroidTypeC)))
 	iphone14.Charge()
 }

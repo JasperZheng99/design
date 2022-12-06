@@ -1,13 +1,12 @@
-package test
+package facade
 
 import (
-	"design/facade"
 	"fmt"
 	"testing"
 )
 
 func TestFacade(t *testing.T) {
-	homePlayer := new(facade.HomePlayerFacade)
+	homePlayer := new(HomePlayerFacade)
 
 	homePlayer.DoKTV()
 

@@ -1,7 +1,6 @@
-package test
+package factory
 
 import (
-	"design/factory"
 	"testing"
 )
 
@@ -24,7 +23,7 @@ import (
 
 // 简单工厂模式
 func TestSimpleFactory(t *testing.T) {
-	fac := factory.SimpleFactory{}
+	fac := SimpleFactory{}
 	football := fac.CreatFactory("football")
 	football.Play()
 
@@ -34,24 +33,24 @@ func TestSimpleFactory(t *testing.T) {
 
 // 工厂方法测试
 func TestFactory(t *testing.T) {
-	var appFactory factory.Factory = new(factory.AppleFactory)
+	var appFactory Factory = new(AppleFactory)
 
 	apple := appFactory.CreatFruit()
 
 	apple.Show()
 
-	var bananaFactory factory.Factory = new(factory.BananaFactory)
+	var bananaFactory Factory = new(BananaFactory)
 	banana := bananaFactory.CreatFruit()
 	banana.Show()
 }
 
 // 抽象工厂测试
 func TestAbstractFactory(t *testing.T) {
-	var chineseFac factory.AbstractFactory = new(factory.ChineseFactory)
+	var chineseFac AbstractFactory = new(ChineseFactory)
 	shoes := chineseFac.CreatShoes()
 	shoes.ShowShoesArea()
 
-	var japaneseFac factory.AbstractFactory = new(factory.JananeseFactory)
+	var japaneseFac AbstractFactory = new(JananeseFactory)
 	hat := japaneseFac.CreatHat()
 	hat.ShowHatArea()
 }
