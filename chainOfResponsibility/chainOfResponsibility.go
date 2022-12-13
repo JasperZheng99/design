@@ -30,6 +30,7 @@ func (r *Reception) execute(p *Patient) {
 		r.next.execute(p)
 		return
 	}
+
 	fmt.Println("前台进行挂号")
 	p.registrationDone = true
 	r.next.execute(p)
@@ -47,6 +48,7 @@ func (d *Doctor) execute(p *Patient) {
 	if p.doctorCheckUpDone {
 		fmt.Println("医生诊断好了")
 		d.next.execute(p)
+
 		return
 	}
 	fmt.Println("医生开始诊断")

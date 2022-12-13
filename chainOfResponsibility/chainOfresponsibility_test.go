@@ -1,10 +1,13 @@
 package chainOfresponsibility
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestChainOfresponsibility(t *testing.T) {
 	reception := new(Reception)
 	doctor := new(Doctor)
+
 	medical := new(Medical)
 
 	reception.setNext(doctor)
@@ -13,6 +16,7 @@ func TestChainOfresponsibility(t *testing.T) {
 	patient := &Patient{
 		name: "张三",
 	}
-
+	
+	
 	reception.execute(patient)
 }
